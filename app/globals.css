@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-font-smoothing: antialiased; }
+  body { @apply bg-gray-50 text-gray-900 text-sm leading-relaxed; }
+  h1 { @apply text-xl font-semibold tracking-tight; }
+  h2 { @apply text-base font-semibold; }
+  h3 { @apply text-sm font-semibold; }
+}
+
+@layer components {
+  .input {
+    @apply w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm bg-white
+           text-gray-900 placeholder:text-gray-400 focus:outline-none
+           focus:ring-2 focus:ring-green-500/20 focus:border-green-400
+           transition-colors duration-150 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .label { @apply text-xs font-medium text-gray-600 block mb-1.5; }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg
+           text-sm font-medium transition-all duration-150 focus:outline-none
+           focus:ring-2 focus:ring-offset-1 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-primary { @apply btn bg-gray-900 text-white hover:bg-gray-700 focus:ring-gray-500; }
+  .btn-green   { @apply btn bg-green-500 text-white hover:bg-green-600 focus:ring-green-400; }
+  .btn-outline {
+    @apply btn border border-gray-200 text-gray-700 bg-white
+           hover:border-gray-400 hover:text-gray-900 focus:ring-gray-300;
+  }
+  .btn-ghost { @apply btn text-gray-500 hover:text-gray-900 hover:bg-gray-100; }
+  .card        { @apply bg-white rounded-xl border border-gray-100 shadow-card; }
+  .card-padded { @apply card p-5; }
+  .badge       { @apply inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium border; }
+  .section-label { @apply text-xs font-semibold text-gray-400 uppercase tracking-wide; }
+  .skeleton    { @apply bg-gray-100 rounded-lg animate-pulse; }
+}

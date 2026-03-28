@@ -1,0 +1,8 @@
+{
+  "framework": "nextjs",
+  "buildCommand": "next build",
+  "functions": {
+    "app/api/twilio/webhook/route.ts": { "maxDuration": 15 },
+    "app/api/banks/rank/route.ts":     { "maxDuration": 10 }
+  }
+}
